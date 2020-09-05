@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+            name="click_submit_main_activity"
+            type="com.mohamedtaha.imagine.gadsleaderboard.ClickSubmit" />
+
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/relative_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tool_bar"
+            style="@style/style_toolbar"
+            android:padding="@dimen/defult_dimen"/>
+        <TextView
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_start_end_margin"
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/appbar_padding"
+            android:text="@string/leader_bord"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_font_titleXL"
+            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/defult_dimen"
+            android:layout_marginEnd="@dimen/activity_start_end_margin"
+            android:paddingStart="@dimen/defult_dimen"
+            android:paddingEnd="@dimen/defult_dimen"
+            android:id="@+id/bt_main_activity"
+            android:textColor="@android:color/black"
+            android:text="@string/submit"
+            android:onClick="@{() -> click_submit_main_activity.submit()}"
+            android:textSize="@dimen/text_size_font_titleXL"
+            android:background="@drawable/shape_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabs_main_Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:layout_below="@+id/tool_bar"
+            app:tabGravity="fill"
+            app:tabMaxWidth="0dp"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            app:tabMode="fixed"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:tabTextColor= "@color/color_gray"
+            app:tabSelectedTextColor="@android:color/white"
+            />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager_main_activity"
+            android:layout_below="@+id/tabs_main_Activity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_marginTop="@dimen/appbar_padding"
+
+            />
+
+    </RelativeLayout>
+</layout>

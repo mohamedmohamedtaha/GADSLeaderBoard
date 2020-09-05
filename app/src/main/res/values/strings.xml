@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">GADS Leaderboard</string>
+    <string name="leader_bord">Leaderboard</string>
+
+    <string name="submit">Submit</string>
+    <string name="project_submit">Project Submission</string>
+    <string name="submit_successful">Submission Successful</string>
+    <string name="submit_not_successful">Submission not Successful</string>
+    <string name="learning_hours"> learning hours,</string>
+    <string name="skill_iq_score"> skill IQ Score,</string>
+    <string name="google_africa"> Google Africa </string>
+    <string name="developer_scholarship"> Developer Scholarship</string>
+
+    <string name="learning_leaders">Learning Leaders</string>
+    <string name="skill_iq_leaders">Skill IQ Leaders</string>
+    <string name="first_name">First Name</string>
+    <string name="second_name">Last Name</string>
+    <string name="email">Email Address</string>
+    <string name="link_project">Project on GITHUB (link)</string>
+    <string name="sure">Are you sure ?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="must_fill_all_fields">Must fill all fields</string>
+    <string name="no_internet">No Internet Avaliable</string>
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView
+        android:id="@+id/image_view_close"
+        android:layout_marginEnd="@dimen/defult_dimen"
+        android:layout_marginTop="@dimen/defult_dimen"
+        android:background="@drawable/background_ic_close"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/text_view_sure"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:layout_marginTop="@dimen/margin_top_viewpager"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_font_titleXXL"
+        android:text="@string/sure"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_sure"
+        android:layout_marginTop="@dimen/margin_top_viewpager"
+        android:id="@+id/submit_custom_sure"
+        android:background="@drawable/shape_button_yes"
+        android:text="@string/yes"
+        android:textColor="@color/colorAccent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/defult_dimen"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

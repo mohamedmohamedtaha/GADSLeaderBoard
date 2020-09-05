@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="learning_leader"
+            type="com.mohamedtaha.imagine.gadsleaderboard.model.learningleaders.LearningLeader" />
+    </data>
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/appbar_padding_top"
+        app:cardElevation="@dimen/defult_dimen">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white">
+
+            <ImageView
+                android:id="@+id/imageView_learning_leaders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defult_dimen"
+                app:imageResource="@{learning_leader.badgeUrl}"
+                app:requestListener="@{learning_leader.customRequestListener}"
+                android:visibility="@{learning_leader.imageVisibility ? View.VISIBLE : View.INVISIBLE}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/name_learning_leaders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defult_dimen"
+                android:layout_marginTop="@dimen/defult_dimen"
+                android:text="@{learning_leader.name}"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toEndOf="@+id/imageView_learning_leaders"
+                app:layout_constraintTop_toTopOf="@+id/imageView_learning_leaders"
+                tools:layout_editor_absoluteY="69dp" />
+
+            <TextView
+                android:id="@+id/hour_learning_leaders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/defult_dimen"
+                android:layout_marginBottom="@dimen/defult_dimen"
+                android:text="@{String.valueOf(learning_leader.hours).concat( ' ' + @string/learning_hours )}"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_learning_leaders"
+                app:layout_constraintStart_toEndOf="@+id/imageView_learning_leaders" />
+
+            <TextView
+                android:id="@+id/country_learning_leaders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/appbar_padding_top"
+                android:layout_marginBottom="@dimen/defult_dimen"
+                android:text="@{learning_leader.country + '.'}"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView_learning_leaders"
+                app:layout_constraintStart_toEndOf="@+id/hour_learning_leaders"
+
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>

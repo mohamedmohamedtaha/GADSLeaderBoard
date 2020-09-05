@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="skill_iq_leader"
+            type="com.mohamedtaha.imagine.gadsleaderboard.model.skilliqleaders.SkillIQLeaders" />
+
+    </data>
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_vertical_margin"
+        android:layout_marginRight="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/appbar_padding_top"
+        android:paddingBottom="@dimen/defult_dimen"
+        app:cardElevation="@dimen/defult_dimen">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <ImageView
+            android:id="@+id/imageView_skill_iq_leader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/defult_dimen"
+            android:layout_marginBottom="@dimen/appbar_padding_top"
+            android:layout_marginTop="@dimen/appbar_padding_top"
+            app:imageResource="@{skill_iq_leader.badgeUrl}"
+            app:requestListener="@{skill_iq_leader.customRequestListener}"
+            android:visibility="@{skill_iq_leader.imageVisibility ? View.VISIBLE : View.INVISIBLE}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/name_skill_iq_leader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/appbar_padding_top"
+            android:layout_marginStart="@dimen/defult_dimen"
+            android:text="@{skill_iq_leader.name}"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@+id/imageView_skill_iq_leader"
+            app:layout_constraintTop_toTopOf="@+id/imageView_skill_iq_leader" />
+
+        <TextView
+            android:id="@+id/score_skill_iq_leader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/defult_dimen"
+            android:text="@{String.valueOf(skill_iq_leader.score).concat(' ' + @string/skill_iq_score)}"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@+id/name_skill_iq_leader"
+            app:layout_constraintStart_toEndOf="@+id/imageView_skill_iq_leader" />
+
+        <TextView
+            android:id="@+id/country_lskill_iq_leader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{skill_iq_leader.country}"
+            app:layout_constraintTop_toBottomOf="@+id/name_skill_iq_leader"
+            app:layout_constraintStart_toEndOf="@+id/score_skill_iq_leader"
+            android:layout_marginStart="@dimen/appbar_padding_top"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</layout>
