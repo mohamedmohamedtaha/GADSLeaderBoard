@@ -26,7 +26,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.mohamedtaha.imagine.gadsleaderboard.rest.RetrofitClient.getRetrofitGitHub;
+import static com.mohamedtaha.imagine.gadsleaderboard.rest.RetrofitPost.getRetrofitGitHub;
+
 
 public class SubmitActivity extends AppCompatActivity implements ClickSubmit {
     private static final String TAG = "SubmitActivity";
@@ -40,7 +41,6 @@ public class SubmitActivity extends AppCompatActivity implements ClickSubmit {
         super.onCreate(savedInstanceState);
         activitySubmitBinding = DataBindingUtil.setContentView(this, R.layout.activity_submit);
         activitySubmitBinding.setClickSubmit(this::submit);
-
         setToolbar();
 
     }
@@ -55,7 +55,6 @@ public class SubmitActivity extends AppCompatActivity implements ClickSubmit {
                     Log.d(TAG, String.valueOf(response.code()));
                     showDialogSubmission(R.string.submit_successful, R.drawable.ic_right);
                     activitySubmitBinding.ProgressBarSubmitFragment.setVisibility(View.GONE);
-
                 } else {
                     showDialogSubmission(R.string.submit_not_successful, R.drawable.ic_error);
                     activitySubmitBinding.ProgressBarSubmitFragment.setVisibility(View.GONE);
@@ -159,4 +158,5 @@ public class SubmitActivity extends AppCompatActivity implements ClickSubmit {
         }
         return false;
     }
+
 }
