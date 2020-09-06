@@ -20,11 +20,11 @@ public interface APIServices {
 
     @GET("skilliq")
     Call<List<SkillIQLeaders>> getSkillIqLeaders();
-
-    @Headers("Content-Type: application/json")
-    @FormUrlEncoded
+//
+//    @Headers("Content-Type: application/json")
     @POST("1FAIpQLSf9d1TcNU6zc6KR8bSEM41Z1g1zl35cwZr2xyjIhaMAz8WChQ/formResponse")
-    Call<ResponseBody> uploadProject(@Field("entry.1824927963") String email,
+    @FormUrlEncoded
+    Call<Void> uploadProject(@Field("entry.1824927963") String email,
                                      @Field("entry.1877115667") String first_name,
                                      @Field("entry.2006916086") String last_name,
                                      @Field("entry.284483984") String link_github);

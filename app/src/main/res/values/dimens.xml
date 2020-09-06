@@ -12,10 +12,12 @@
     <dimen name="fourty_five_dimen">45dp</dimen>
     <dimen name="sixty_four_dimen">64dp</dimen>
 
+    <dimen name="txt_size_s">12sp</dimen>
 
     <dimen name="text_size_font_titleXL">16sp</dimen>
     <dimen name="text_size_font_titleXXL">22sp</dimen>
     <dimen name="text_size_font_titleXXXL">32sp</dimen>
     <dimen name="text_size_font_titleXXXXL">48sp</dimen>
+    <dimen name="dimens_s">4dp</dimen>
 
 </resources>

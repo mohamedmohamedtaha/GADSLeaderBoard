@@ -48,9 +48,9 @@ public class SubmitActivity extends AppCompatActivity implements ClickSubmit {
     private void uploadProject(String email_address,String first_name, String last_name,  String project_link) {
         activitySubmitBinding.ProgressBarSubmitFragment.setVisibility(View.VISIBLE);
         apiServices = getRetrofitGitHub().create(APIServices.class);
-        apiServices.uploadProject( email_address,first_name, last_name, project_link).enqueue(new Callback<ResponseBody>() {
+        apiServices.uploadProject( email_address,first_name, last_name, project_link).enqueue(new Callback<Void>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            public void onResponse(Call<Void> call, Response<Void> response) {
                 if (response.isSuccessful()) {
                     Log.d(TAG, String.valueOf(response.code()));
                     showDialogSubmission(R.string.submit_successful, R.drawable.ic_right);
@@ -65,7 +65,7 @@ public class SubmitActivity extends AppCompatActivity implements ClickSubmit {
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            public void onFailure(Call<Void> call, Throwable t) {
                 Log.d(TAG, t.getMessage());
                 showDialogSubmission(R.string.submit_not_successful, R.drawable.ic_error);
                 activitySubmitBinding.ProgressBarSubmitFragment.setVisibility(View.GONE);
